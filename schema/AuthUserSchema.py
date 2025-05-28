@@ -37,9 +37,9 @@ class UserLoginSchema(BaseModel):
 
 class CreateGroupsSchema(BaseModel) :
     name:Annotated[str, StringConstraints(max_length=30)]
-    is_active:Optional[bool]
-    created_by:Optional[str]
-    last_modified_by:Optional[str]
+    is_active:Optional[bool] = True
+    created_by:Optional[str] = datetime.now()
+    last_modified_by:Optional[str] = None
 
 class GroupsResponseSchema(BaseModel) :
     id:int

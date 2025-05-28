@@ -28,9 +28,9 @@ class Groups(Base):
     id:Mapped[int] = mapped_column(primary_key=True, autoincrement=True, nullable=False)
     name:Mapped[str] = mapped_column(String(50), unique=True, nullable=False)
     is_active:Mapped[bool] = mapped_column(Boolean, default=True)
-    created_by:Mapped[str] =  mapped_column(String(50), nullable=False)
+    created_by:Mapped[str] =  mapped_column(String(50), nullable=True)
     created_date:Mapped[datetime] = mapped_column(DateTime, default=datetime.now)
-    last_modified_by:Mapped[str] = mapped_column(String(50), nullable=False)
+    last_modified_by:Mapped[str] = mapped_column(String(50), nullable=True)
     last_modified_date:Mapped[datetime] =  mapped_column(DateTime, default=datetime.now)
 
     # Relationships for Groups
